@@ -102,3 +102,28 @@ describe("combination", function(){
         })
     });
 });
+
+
+describe("isPrime", function(){
+    var testCases = [
+        {
+            n : 2,
+            return: true
+        },
+        {
+            n : 4,
+            return: false
+        },
+        {
+            n : 13,
+          return: true
+        }
+    ];
+
+    testCases.forEach(function(testCase){
+        it("should returns " + testCase.return + " when n = " + testCase.n, function(){
+            var result = Util.isPrime(testCase.n);
+            expect(result).toEqual(testCase.return);
+        })
+    });
+});

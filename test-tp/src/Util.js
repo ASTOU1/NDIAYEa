@@ -43,7 +43,20 @@ return Util.factorial(n)/(Util.factorial(r)* Util.factorial(n-r));
  * @returns {boolean}
  */
 Util.isPrime = function(n) {
+  if(n==2){
+    return true;
+  }
+  var m=Math.sqrt(n);
 
+  if(n%2 ==0){
+      return false;
+  }
+  for(var i=3; i<m ; i+=2){
+       if(n%i ==0){
+     return false;
+  }
+}
+   return true;
 };
 
 
