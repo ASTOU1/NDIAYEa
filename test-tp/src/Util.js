@@ -47,7 +47,6 @@ Util.isPrime = function(n) {
     return true;
   }
   var m=Math.sqrt(n);
-
   if(n%2 ==0){
       return false;
   }
@@ -56,7 +55,7 @@ Util.isPrime = function(n) {
      return false;
   }
 }
-   return true;
+   return true; 
 };
 
 
