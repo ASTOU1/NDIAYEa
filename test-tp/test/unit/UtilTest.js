@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+=======
+
+
+describe("A suite", function() {
+  it("contains spec with an expectation", function() {
+    expect(true).toBe(true);
+  });
+});
+
+
+describe("A suite is just a function", function() {
+  var a;
+
+  it("and so is a spec", function() {
+    a = true;
+
+    expect(a).toBe(true);
+  });
+});
+>>>>>>> 85a93df4d9d2de7efcf51c05700cf8f1410110c5
 describe("Factorial", function(){
     var testCases = [
         {
@@ -20,6 +41,7 @@ describe("Factorial", function(){
             n : 4,
             factorial : 24
         }
+<<<<<<< HEAD
     ];
 
     testCases.forEach(function(testCase){
@@ -164,3 +186,94 @@ describe("fizzbuzz", function(){
         })
     });
 });
+=======
+    ];
+
+    testCases.forEach(function(testCase){
+        it("should returns " + testCase.factorial + " when n = " + testCase.n, function(){
+            var result = Util.factorial(testCase.n);
+            expect(result).toEqual(testCase.factorial);
+        })
+    });
+});
+
+
+describe("Arrangement", function(){
+    var testCases = [
+        {
+            n : 3,
+            r:2,
+            arrangement : 6
+        },
+        {
+            n : 4,
+            r:3,
+            arrangement : 24
+        },
+        {
+            n : 5,
+            r:4,
+            arrangement : 120
+        }
+    ];
+
+    testCases.forEach(function(testCase){
+        it("should returns " + testCase.arrangement + " when n = " + testCase.n + " when r = " + testCase.r, function(){
+            var result = Util.arrangement(testCase.n, testCase.r );
+            expect(result).toEqual(testCase.arrangement);
+        })
+    });
+});
+
+describe("combination", function(){
+    var testCases = [
+        {
+            n : 3,
+            r:2,
+            combination: 3
+        },
+        {
+            n : 4,
+            r:3,
+            combination : 4
+        },
+        {
+            n : 5,
+            r:4,
+            combination : 5
+        }
+    ];
+
+    testCases.forEach(function(testCase){
+        it("should returns " + testCase.combination + " when n = " + testCase.n + " when r = " + testCase.r, function(){
+            var result = Util.combination(testCase.n, testCase.r );
+            expect(result).toEqual(testCase.combination);
+        })
+    });
+});
+
+
+describe("isPrime", function(){
+    var testCases = [
+        {
+            n : 2,
+            return: true
+        },
+        {
+            n : 4,
+            return: false
+        },
+        {
+            n : 13,
+          return: true
+        }
+    ];
+
+    testCases.forEach(function(testCase){
+        it("should returns " + testCase.return + " when n = " + testCase.n, function(){
+            var result = Util.isPrime(testCase.n);
+            expect(result).toEqual(testCase.return);
+        })
+    });
+});
+>>>>>>> 85a93df4d9d2de7efcf51c05700cf8f1410110c5
