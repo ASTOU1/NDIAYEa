@@ -1,24 +1,4 @@
-<<<<<<< HEAD
-=======
 
-
-describe("A suite", function() {
-  it("contains spec with an expectation", function() {
-    expect(true).toBe(true);
-  });
-});
-
-
-describe("A suite is just a function", function() {
-  var a;
-
-  it("and so is a spec", function() {
-    a = true;
-
-    expect(a).toBe(true);
-  });
-});
->>>>>>> 85a93df4d9d2de7efcf51c05700cf8f1410110c5
 describe("Factorial", function(){
     var testCases = [
         {
@@ -41,7 +21,7 @@ describe("Factorial", function(){
             n : 4,
             factorial : 24
         }
-<<<<<<< HEAD
+
     ];
 
     testCases.forEach(function(testCase){
