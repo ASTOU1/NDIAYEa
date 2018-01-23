@@ -20,7 +20,7 @@ Util.factorial = function(n) {
  * @returns {number}
  */
 Util.arrangement = function(n, r) {
-
+return Util.factorial(n)/Util.factorial(n-r);
 };
 
 /**
@@ -31,7 +31,7 @@ Util.arrangement = function(n, r) {
  * @returns {number}
  */
 Util.combination = function(n, r) {
-
+return Util.factorial(n)/(Util.factorial(r)* Util.factorial(n-r));
 };
 
 /**
@@ -43,7 +43,20 @@ Util.combination = function(n, r) {
  * @returns {boolean}
  */
 Util.isPrime = function(n) {
+  if(n==2){
+    return true;
+  }
+  var m=Math.sqrt(n);
 
+  if(n%2 ==0){
+      return false;
+  }
+  for(var i=3; i<m ; i+=2){
+       if(n%i ==0){
+     return false;
+  }
+}
+   return true;
 };
 
 
@@ -57,7 +70,15 @@ Util.isPrime = function(n) {
  * @returns {number}
  */
 Util.sumPrime = function(n) {
+     var sum =0;
+     var s=0;
+     for(var i=2; i<n; i++){
+       if( Util.isPrime(i))
+       sum+=i;
 
+     }
+
+     return sum;
 };
 
 /**
@@ -73,9 +94,31 @@ Util.sumPrime = function(n) {
  * @returns {array}
  */
 Util.fizzBuzz = function(n) {
+  //Your code goes here
+  for(var i=1; i<n;i++)
+        {
+            if(i%3==0 && i%5==0)
+            {
+                return FizzBuzz;
 
+            }
+            else if(i%3==0 && i%5!=0)
+            {
+                return Fizz ;
+
+            }
+            else if(i%3!=0 && i%5==0)
+            {
+              return Buzz;
+
+
+            }
+            else
+            {
+                return i;
+            }
+          }
 };
-
 /**
  * Chiffre une phrase selon la règle suivante : Les A deviennent des B, les B des C, etc.
  *
