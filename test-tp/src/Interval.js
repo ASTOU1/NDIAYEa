@@ -23,7 +23,12 @@ Interval.prototype.overlaps = function (interval) {
  * @returns {boolean}
  */
 Interval.prototype.includes = function (interval) {
-
+  if (Interval.start <this.interval <Interval.end){
+    return true;
+  }
+  else {
+      return false;
+    }
 };
 
 /**
@@ -52,6 +57,3 @@ Interval.prototype.intersection = function (interval) {
 Interval.prototype.exclusion = function (interval) {
 
 };
-
-
-
