@@ -142,11 +142,11 @@ describe("FizzBuzz", function(){
     var testCases = [
         {
             n : 10,
-          fizzbuz: "Buzz"
+          fizzbuz: "buzz"
         },
         {
             n : 15,
-          fizzbuz: "Fizzbuzz"
+          fizzbuz: "fizzbuzz"
         },
         {
             n : 7,
@@ -155,7 +155,7 @@ describe("FizzBuzz", function(){
 
         {
             n : 3,
-          fizzbuz: "Fizz"
+          fizzbuz: "fizz"
         }
     ];
 
