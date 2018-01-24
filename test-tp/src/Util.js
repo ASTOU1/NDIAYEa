@@ -55,9 +55,8 @@ Util.isPrime = function(n) {
      return false;
   }
 }
-   return true; 
+   return true;
 };
-
 
 /**
  * Additionne l'ensemble des nombres de 2 à n
@@ -69,7 +68,15 @@ Util.isPrime = function(n) {
  * @returns {number}
  */
 Util.sumPrime = function(n) {
+     var sum =0;
+     var s=0;
+     for(var i=2; i<n; i++){
+       if( Util.isPrime(i))
+       sum+=i;
 
+     }
+
+     return sum;
 };
 
 /**
@@ -85,9 +92,31 @@ Util.sumPrime = function(n) {
  * @returns {array}
  */
 Util.fizzBuzz = function(n) {
+  //Your code goes here
+  for(var i=1; i<n;i++)
+        {
+            if(i%3==0 && i%5==0)
+            {
+                return FizzBuzz;
 
+            }
+            else if(i%3==0 && i%5!=0)
+            {
+                return Fizz ;
+
+            }
+            else if(i%3!=0 && i%5==0)
+            {
+              return Buzz;
+
+
+            }
+            else
+            {
+                return i;
+            }
+          }
 };
-
 /**
  * Chiffre une phrase selon la règle suivante : Les A deviennent des B, les B des C, etc.
  *

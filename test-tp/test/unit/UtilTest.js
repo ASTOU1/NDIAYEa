@@ -1,21 +1,3 @@
-
-
-describe("A suite", function() {
-  it("contains spec with an expectation", function() {
-    expect(true).toBe(true);
-  });
-});
-
-
-describe("A suite is just a function", function() {
-  var a;
-
-  it("and so is a spec", function() {
-    a = true;
-
-    expect(a).toBe(true);
-  });
-});
 describe("Factorial", function(){
     var testCases = [
         {
@@ -124,6 +106,62 @@ describe("isPrime", function(){
         it("should returns " + testCase.return + " when n = " + testCase.n, function(){
             var result = Util.isPrime(testCase.n);
             expect(result).toEqual(testCase.return);
+        })
+    });
+});
+
+
+
+describe("sumPrime", function(){
+    var testCases = [
+        {
+            n : 10,
+            sumPrime: 26
+        },
+        {
+            n : 8,
+            sumPrime: 17
+        },
+        {
+            n : 6,
+          sumPrime: 10
+        }
+    ];
+
+    testCases.forEach(function(testCase){
+        it("should returns " + testCase.sumPrime + " when n = " + testCase.n, function(){
+            var result = Util.sumPrime(testCase.n);
+            expect(result).toEqual(testCase.sumPrime);
+        })
+    });
+});
+
+
+describe("fizzbuzz", function(){
+    var testCases = [
+        {
+            n : 10,
+          fizzbuzz: buzz
+        },
+        {
+            n : 15,
+          fizzbuzz: fizzbuzz
+        },
+        {
+            n : 7,
+          fizzbuzz: 7
+        }
+
+        {
+            n : 3,
+          fizzbuzz: fizz
+        }
+    ];
+
+    testCases.forEach(function(testCase){
+        it("should returns " + testCase.fizzbuzz + " when n = " + testCase.n, function(){
+            var result = Util.fizzbuzz(testCase.n);
+            expect(result).toEqual(testCase.fizzbuzz);
         })
     });
 });
