@@ -138,122 +138,31 @@ describe("sumPrime", function(){
 });
 
 
-describe("fizzbuzz", function(){
+describe("FizzBuzz", function(){
     var testCases = [
         {
             n : 10,
-          fizzbuzz: buzz
+          fizzbuz: "Buzz"
         },
         {
             n : 15,
-          fizzbuzz: fizzbuzz
+          fizzbuz: "Fizzbuzz"
         },
         {
             n : 7,
-          fizzbuzz: 7
-        }
+          fizzbuz: 7
+        },
 
         {
             n : 3,
-          fizzbuzz: fizz
+          fizzbuz: "Fizz"
         }
     ];
 
     testCases.forEach(function(testCase){
-        it("should returns " + testCase.fizzbuzz + " when n = " + testCase.n, function(){
-            var result = Util.fizzbuzz(testCase.n);
-            expect(result).toEqual(testCase.fizzbuzz);
+        it("should returns " + testCase.fizzbuz + " when n = " + testCase.n, function(){
+            var result = Util.fizzBuzz(testCase.n);
+            expect(result).toEqual(testCase.fizzbuz);
         })
     });
 });
-=======
-    ];
-
-    testCases.forEach(function(testCase){
-        it("should returns " + testCase.factorial + " when n = " + testCase.n, function(){
-            var result = Util.factorial(testCase.n);
-            expect(result).toEqual(testCase.factorial);
-        })
-    });
-});
-
-
-describe("Arrangement", function(){
-    var testCases = [
-        {
-            n : 3,
-            r:2,
-            arrangement : 6
-        },
-        {
-            n : 4,
-            r:3,
-            arrangement : 24
-        },
-        {
-            n : 5,
-            r:4,
-            arrangement : 120
-        }
-    ];
-
-    testCases.forEach(function(testCase){
-        it("should returns " + testCase.arrangement + " when n = " + testCase.n + " when r = " + testCase.r, function(){
-            var result = Util.arrangement(testCase.n, testCase.r );
-            expect(result).toEqual(testCase.arrangement);
-        })
-    });
-});
-
-describe("combination", function(){
-    var testCases = [
-        {
-            n : 3,
-            r:2,
-            combination: 3
-        },
-        {
-            n : 4,
-            r:3,
-            combination : 4
-        },
-        {
-            n : 5,
-            r:4,
-            combination : 5
-        }
-    ];
-
-    testCases.forEach(function(testCase){
-        it("should returns " + testCase.combination + " when n = " + testCase.n + " when r = " + testCase.r, function(){
-            var result = Util.combination(testCase.n, testCase.r );
-            expect(result).toEqual(testCase.combination);
-        })
-    });
-});
-
-
-describe("isPrime", function(){
-    var testCases = [
-        {
-            n : 2,
-            return: true
-        },
-        {
-            n : 4,
-            return: false
-        },
-        {
-            n : 13,
-          return: true
-        }
-    ];
-
-    testCases.forEach(function(testCase){
-        it("should returns " + testCase.return + " when n = " + testCase.n, function(){
-            var result = Util.isPrime(testCase.n);
-            expect(result).toEqual(testCase.return);
-        })
-    });
-});
->>>>>>> 85a93df4d9d2de7efcf51c05700cf8f1410110c5
