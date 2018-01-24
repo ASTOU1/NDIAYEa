@@ -1,4 +1,3 @@
-
 describe("Factorial", function(){
     var testCases = [
         {
@@ -140,10 +139,7 @@ describe("sumPrime", function(){
 
 describe("FizzBuzz", function(){
     var testCases = [
-        {
-            n : 10,
-          fizzbuz: "buzz"
-        },
+
         {
             n : 15,
           fizzbuz: "fizzbuzz"
@@ -156,6 +152,10 @@ describe("FizzBuzz", function(){
         {
             n : 3,
           fizzbuz: "fizz"
+        },
+        {
+            n : 10,
+          fizzbuz: "buzz"
         }
     ];
 
