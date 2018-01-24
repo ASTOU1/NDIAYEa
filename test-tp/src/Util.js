@@ -94,19 +94,19 @@ Util.sumPrime = function(n) {
 Util.fizzBuzz = function(n) {
   //Your code goes here
 
-            if(n%3 ==0 && n%5 ==0)
+            if(n%3==0 && n%5==0)
             {
-                return "Fizzbuzz";
+                return "fizzbuzz";
 
             }
-            else if(n%3 ==0 && n%5 !=0)
+            else if(n%3==0 && n%5!=0)
             {
-                return "Fizz" ;
+                return "fizz" ;
 
             }
             else if(n%3!=0 && n%5==0)
             {
-              return "Buzz";
+              return "buzz";
             }
             else
             {
