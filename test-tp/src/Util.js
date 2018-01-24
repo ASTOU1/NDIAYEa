@@ -93,29 +93,26 @@ Util.sumPrime = function(n) {
  */
 Util.fizzBuzz = function(n) {
   //Your code goes here
-  for(var i=1; i<n;i++)
-        {
-            if(i%3==0 && i%5==0)
+
+            if(n%3 ==0 && n%5 ==0)
             {
-                return FizzBuzz;
+                return "Fizzbuzz";
 
             }
-            else if(i%3==0 && i%5!=0)
+            else if(n%3 ==0 && n%5 !=0)
             {
-                return Fizz ;
+                return "Fizz" ;
 
             }
-            else if(i%3!=0 && i%5==0)
+            else if(n%3!=0 && n%5==0)
             {
-              return Buzz;
-
-
+              return "Buzz";
             }
             else
             {
-                return i;
+                return n;
+
             }
-          }
 };
 /**
  * Chiffre une phrase selon la règle suivante : Les A deviennent des B, les B des C, etc.

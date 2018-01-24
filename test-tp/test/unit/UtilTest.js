@@ -137,31 +137,31 @@ describe("sumPrime", function(){
 });
 
 
-describe("fizzbuzz", function(){
+describe("fizzBuzz", function(){
     var testCases = [
-        {
-            n : 10,
-          fizzbuzz: buzz
-        },
-        {
-            n : 15,
-          fizzbuzz: fizzbuzz
+
+        {  n : 15,
+          fizzbuz: "Fizzbuzz"
         },
         {
             n : 7,
-          fizzbuzz: 7
-        }
+          fizzbuz: 7
+        },
 
         {
             n : 3,
-          fizzbuzz: fizz
-        }
+          fizzbuz: "Fizz"
+        },
+        {
+            n : 10,
+          fizzbuz: "Buzz"
+        },
     ];
 
     testCases.forEach(function(testCase){
-        it("should returns " + testCase.fizzbuzz + " when n = " + testCase.n, function(){
-            var result = Util.fizzbuzz(testCase.n);
-            expect(result).toEqual(testCase.fizzbuzz);
+        it("should returns " + testCase.fizzbuz + " when n = " + testCase.n, function(){
+            var result = Util.fizzBuzz(testCase.n);
+            expect(result).toEqual(testCase.fizzbuz);
         })
     });
 });
