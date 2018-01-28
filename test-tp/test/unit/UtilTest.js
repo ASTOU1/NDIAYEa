@@ -20,7 +20,6 @@ describe("Factorial", function(){
             n : 4,
             factorial : 24
         }
-
     ];
 
     testCases.forEach(function(testCase){
