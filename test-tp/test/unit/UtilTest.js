@@ -155,7 +155,7 @@ describe("fizzBuzz", function(){
         {
             n : 10,
           fizzbuz: "buzz"
-        },
+        }
     ];
 
     testCases.forEach(function(testCase){
