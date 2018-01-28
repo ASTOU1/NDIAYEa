@@ -140,8 +140,7 @@ describe("sumPrime", function(){
 describe("fizzBuzz", function(){
     var testCases = [
 
-        {
-            n : 15,
+        {  n : 15,
           fizzbuz: "fizzbuzz"
         },
         {
