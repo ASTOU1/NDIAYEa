@@ -137,7 +137,7 @@ describe("sumPrime", function(){
 });
 
 
-describe("FizzBuzz", function(){
+describe("fizzBuzz", function(){
     var testCases = [
 
         {
