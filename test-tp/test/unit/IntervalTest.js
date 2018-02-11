@@ -24,6 +24,7 @@ describe("Interval - overlapping", function () {
         });
     });
 });
+<<<<<<< HEAD
 
 describe("Interval - include", function () {
     testedInterval = new Interval(10, 20);
@@ -174,3 +175,6 @@ describe("Interval - intersection", function () {
             });
         });
     });
+=======
+*/
+>>>>>>> fe6084651f4ffb3e161e38440b542d808c02c401
