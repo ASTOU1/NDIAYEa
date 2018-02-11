@@ -1,66 +1,86 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var UserRepository = require('./src/repository/UserRepository');
-var User = require('./src/model/User');
-var db = require('./src/Db');
-const uuidv4 = require('uuid/v4');
-var app = express();
-app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
+/**
+ *
+ * @param db
+ * @constructor
+ */
+var UserRepository = function (db) {
+    this.db = db;
+};
 
-app
-    .route('/user/:id?')
+/**
+ *
+ * @param {User} user
+ */
+UserRepository.prototype.create = function (user) {
+    if (!user) {
+        throw 'User object is undefined';
+    }
 
-    // Récupération d'un utilisateur
-    .get(function (req, res) {
-        var id = req.params.id;
-        var repository = new UserRepository(db);
-        var user = repository.findOneById(id);
+    if (!user.id || !user.firstname || !user.lastname || !user.birthday) {
+        throw 'User object is missing information';
+    }
 
-        res.header("Access-Control-Allow-Origin", "*");
-        res.send(user);
-    })
+    var userData = {
+        id: user.id,
+        firstname: user.firstname,
+        lastname: user.lastname,
+        birthday: user.birthday
+    };
 
-    // Creation d'un utilisateur
-    .post(function (req, res) {
-        //req.body.name
-        var user = new User();
-        user.id = uuidv4();
-        user.firstname = req.body.firstname;
-        user.lastname = req.body.lastname;
-        user.birthday = req.body.birthday;
+    this.db
+        .get('users')
+        .push(userData)
+        .write()
+};
 
-        var repository = new UserRepository(db);
-        repository.create(user);
-        res.header("Access-Control-Allow-Origin", "*");
-        res.send(user)
-    })
+/**
+ *
+ * @param {number} id
+ * @return User
+ */
+UserRepository.prototype.findOneById = function (id) {
+    return this.db
+        .get('users')
+        .find({ id: id })
+        .value()
+};
 
-    //mise à jour d'un utilisateur
-    .put(function (req, res) {
+/**
+ *
+ * @param {User} user
+ */
+UserRepository.prototype.update = function (user) {
 
-        var user = new User();
-        user.id = req.params.id;
-        user.firstname = req.body.firstname;
-        user.lastname = req.body.lastname;
-        user.birthday = req.body.birthday;
+    if (!user) {
+        throw 'User object is undefined';
+    }
 
-        var repository = new UserRepository(db);
-        repository.update(user);
-        res.header("Access-Control-Allow-Origin", "*");
-        res.send(user)
+    if (!user.id || !user.firstname || !user.lastname || !user.birthday) {
+        throw 'User object is missing information';
+    }
 
-    })
+    var userData = {
+        id: user.id,
+        firstname: user.firstname,
+        lastname: user.lastname,
+        birthday: user.birthday
+    };
 
-    //suppression d'un utilisateur
-    .delete(function (req, res) {
-        /**
-         * Implémenter le controlleur
-         */
+    this.db
+        .get('users')
+        .find({ id: userData.id })
+        .assign(userData)
+        .write()
 
-        res.send('Not implemented');
-    });
+};
+
+/**
+ *
+ * @param {number} id
+ */
+UserRepository.prototype.delete = function (id) {
+
+};
 
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!')
-});
+module.exports = UserRepository;
